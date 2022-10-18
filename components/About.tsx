@@ -1,8 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-type Props = {}
+import { PageInfo } from '../typings'
 
-export default function About({}: Props) {
+type Props = {
+    pageInfo: PageInfo
+}
+
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
     initial={{
@@ -32,9 +36,9 @@ export default function About({}: Props) {
         }}
         src='https://shop7.webmodule.prestashop.net/pokedoge/11634-small_default/gengar.jpg'
         alt="profile-picture" />
-        <div className="space-y-10 px-8 md:px-10">
+        <div className="space-y-5 px-8 md:px-10">
             <h4 className="text-4xl font-semibold">Here is a <span className="text-3xl font-thin underline decoration-[gold]">little</span> background</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi sit dolores recusandae fugit distinctio voluptatem laboriosam, officia velit voluptates ipsa nemo, maxime facilis fugiat quis tempora saepe debitis reprehenderit esse. Veritatis voluptatibus eaque deserunt dolor molestiae modi, autem nostrum, ea animi dolorum officia reiciendis. Quam animi debitis at nemo asperiores.</p>
+            <p>{pageInfo?.backgroundInformation}</p>
         </div>
     </motion.div>
   )

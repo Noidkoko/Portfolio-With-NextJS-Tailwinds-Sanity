@@ -2,12 +2,15 @@ import React from 'react'
 import { Cursor, useTypewriter } from "react-simple-typewriter"
 import Link from 'next/link'
 import BackgroundCircles from './BackgroundCircles'
+import { PageInfo } from '../typings'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
-        words: ["console.log('Bonjour')", "const name = 'Noidkoko'", "let age = 26", "console.log('Bienvenue')"],
+        words: [`console.log('Bonjour')`, `const name = '${pageInfo?.name}'`, "let age = 26", "console.log('Bienvenue')"],
         loop: true,
         delaySpeed: 1500,
     })
