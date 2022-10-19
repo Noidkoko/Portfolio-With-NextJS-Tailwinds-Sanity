@@ -10,9 +10,9 @@ type Props = {
 
 export default function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
-        words: [`console.log('Bonjour')`, `const name = '${pageInfo?.name}'`, "let age = 26", "console.log('Bienvenue')"],
-        loop: true,
-        delaySpeed: 1500,
+        words: [`console.log('Bonjour')`, `const name = '${pageInfo?.name}'`, "$age = 26;", "var_dump($bienvenue);"],
+        loop: false,
+        delaySpeed: 800,
     })
   return (
     <div className='h-screen flex flex-col space-y-8 justify-center items-center overflow-hidden text-center'>
