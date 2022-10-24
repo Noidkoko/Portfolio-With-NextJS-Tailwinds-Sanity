@@ -51,7 +51,9 @@ export default function ExperienceCards({ experience }: Props) {
 
         <ul className="list-disc space-y-4 ml-5 text-lg h-60 scrollbar scrollbar-track-gray-500/20 scrollbar-thumb-[gold]/80">
           {experience.points.map(point => (
-            <li>{point}</li>
+            <li
+            key={point}
+            >{point}</li>
           ))}
         </ul>
       </div>
